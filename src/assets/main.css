@@ -1,0 +1,82 @@
+:root {
+    --bg: #04090c;
+    --ink: #d8f3f0;
+    --mute: #7fa4a4;
+    --teal: #00f5d4;
+    --mag: #ff2e97;
+    --glass: rgba(10, 30, 34, 0.55);
+    --line: rgba(0, 245, 212, 0.22);
+    --mono: ui-monospace, 'SF Mono', Menlo, Consolas, monospace;
+    --sans: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+    color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font: 16px/1.6 var(--sans);
+    overflow-x: hidden;
+}
+
+h1, h2, h3 { font-family: var(--mono); margin: 0; line-height: 1.1; }
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2.1rem);
+    margin-bottom: 28px;
+    color: var(--teal);
+    text-shadow: 0 0 18px rgba(0, 245, 212, 0.45);
+}
+h2::before { content: '> '; color: var(--mag); }
+
+a { color: inherit; }
+:focus-visible { outline: 2px solid var(--teal); outline-offset: 3px; }
+
+section {
+    position: relative;
+    z-index: 2;
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 88px 22px 24px;
+}
+
+.glass {
+    background: var(--glass);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 22px;
+}
+
+.btn {
+    display: inline-block;
+    font: 600 0.9rem var(--mono);
+    padding: 13px 24px;
+    border-radius: 10px;
+    border: 1px solid var(--teal);
+    background: rgba(0, 245, 212, 0.1);
+    color: var(--teal);
+    text-decoration: none;
+    cursor: pointer;
+    transition: 0.2s;
+}
+.btn:hover { background: var(--teal); color: #022; box-shadow: 0 0 28px rgba(0, 245, 212, 0.6); }
+.btn.alt { border-color: var(--mag); color: var(--mag); background: rgba(255, 46, 151, 0.08); margin-left: 8px; }
+.btn.alt:hover { background: var(--mag); color: #fff; box-shadow: 0 0 28px rgba(255, 46, 151, 0.55); }
+
+.sr { position: absolute; width: 1px; height: 1px; opacity: 0; overflow: hidden; }
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after { animation: none !important; transition: none !important; }
+    html { scroll-behavior: auto; }
+}
