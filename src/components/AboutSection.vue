@@ -5,7 +5,7 @@ import { vTilt } from '@/directives/tilt'
 
 <template>
   <section id="about">
-    <h2>About</h2>
+    <h2>About me</h2>
     <div class="wrap">
       <div class="bio glass">
         <p v-for="(p, i) in about.paragraphs" :key="i">{{ p }}</p>
