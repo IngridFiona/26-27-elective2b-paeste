@@ -8,7 +8,7 @@ export interface Certificate {
     title: string
     issuer: string
     category: string
-    year: number
+    year: string
     date?: string      // ← new, optional, e.g. 'May 28, 2026'
     c1: string
     c2: string
