@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { onBeforeUnmount, onMounted, ref } from 'vue'
 import { profile } from '@/data'
+import ThemeToggle from '@/components/ThemeToggle.vue'
 
 const open = ref(false)
 const current = ref('hero')
@@ -38,8 +39,6 @@ onBeforeUnmount(() => removeEventListener('scroll', onScroll))
         {{ profile.name }}
       </a>
 
-      <button class="burger" aria-label="Toggle menu" :aria-expanded="open" @click="open = !open">☰</button>
-
       <div class="links" :class="{ open }">
         <a
             v-for="l in links"
@@ -52,6 +51,12 @@ onBeforeUnmount(() => removeEventListener('scroll', onScroll))
           {{ l.label }}
         </a>
       </div>
+
+      <!-- theme button + mobile menu button -->
+      <div class="actions">
+        <ThemeToggle />
+        <button class="burger" aria-label="Toggle menu" :aria-expanded="open" @click="open = !open">☰</button>
+      </div>
     </div>
   </nav>
 </template>
@@ -63,9 +68,10 @@ nav {
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border-bottom: 1px solid var(--line);
+  transition: background 0.3s;
 }
 
-/* full width: name at the far left, links at the far right */
+/* full width: name at the far left, links + theme button at the far right */
 .in {
   width: 100%; height: 72px; margin: 0; padding: 0 32px;
   display: flex; align-items: center; justify-content: space-between;
@@ -78,7 +84,7 @@ nav {
 }
 .logo svg { width: 24px; height: 24px; }
 
-.links { display: flex; gap: 6px; height: 100%; }
+.links { display: flex; gap: 6px; height: 100%; margin-left: auto; }
 .links a {
   display: inline-flex; align-items: center; gap: 8px;
   padding: 0 16px; height: 100%;
@@ -91,6 +97,8 @@ nav {
   text-shadow: 0 0 10px rgba(0, 245, 212, 0.6);
 }
 
+.actions { display: flex; align-items: center; gap: 10px; margin-left: 14px; }
+
 svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
 .links svg { width: 18px; height: 18px; }
 
@@ -101,10 +109,11 @@ svg { fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; 
 
 @media (max-width: 960px) {
   .in { padding: 0 18px; }
+  .actions { margin-left: auto; }
   .burger { display: block; }
   .links {
     position: fixed; top: 80px; left: 12px; right: 12px; height: auto;
-    flex-direction: column; gap: 0; padding: 8px;
+    flex-direction: column; gap: 0; padding: 8px; margin-left: 0;
     background: rgba(4, 9, 12, 0.96);
     border: 1px solid var(--line); border-radius: 14px;
     transform: translateY(-12px); opacity: 0; pointer-events: none;
