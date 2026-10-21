@@ -10,7 +10,6 @@ import EducationSection from '@/components/EducationSection.vue'
 import SkillsSection from '@/components/SkillsSection.vue'
 import CertificatesSection from '@/components/CertificatesSection.vue'
 import ContactForm from '@/components/ContactForm.vue'
-import GlitchFX from '@/components/GlitchFX.vue'
 
 const loading = ref(true)
 </script>
