@@ -15,12 +15,18 @@
 
 html { scroll-behavior: smooth; scroll-padding-top: 70px; }
 
+/* hide the scrollbar (scrolling still works) */
+html { scrollbar-width: none; }                 /* Firefox */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar { display: none; }      /* Chrome, Edge, Safari */
+
 body {
     margin: 0;
     background: var(--bg);
     color: var(--ink);
     font: 16px/1.6 var(--sans);
     overflow-x: hidden;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 h1, h2, h3 { font-family: var(--mono); margin: 0; line-height: 1.1; }
@@ -80,3 +86,59 @@ section {
     *, *::before, *::after { animation: none !important; transition: none !important; }
     html { scroll-behavior: auto; }
 }
+
+
+/* =====================================================================
+   LIGHT THEME
+   Turned on by <html data-theme="light"> (see composables/useTheme.ts).
+   The loading screen stays dark on purpose (it sets its own colors).
+   ===================================================================== */
+:root[data-theme='light'] {
+    --bg: #f1f8f8;
+    --ink: #0b2a2e;
+    --mute: #4a6a6e;
+    --teal: #00796b;
+    --mag: #c4005f;
+    --glass: rgba(255, 255, 255, 0.72);
+    --line: rgba(0, 121, 107, 0.28);
+    color-scheme: light;
+}
+
+/* neon text glow looks smudgy on a light background */
+:root[data-theme='light'] :is(main, nav, footer, aside) * { text-shadow: none !important; }
+
+:root[data-theme='light'] .glass { box-shadow: 0 6px 24px rgba(11, 42, 46, 0.07); }
+
+/* buttons */
+:root[data-theme='light'] .btn { background: rgba(0, 121, 107, 0.08); }
+:root[data-theme='light'] .btn:hover { background: var(--teal); color: #fff; box-shadow: 0 6px 20px rgba(0, 121, 107, 0.35); }
+:root[data-theme='light'] .btn.alt { background: rgba(196, 0, 95, 0.06); }
+:root[data-theme='light'] .btn.alt:hover { background: var(--mag); color: #fff; box-shadow: 0 6px 20px rgba(196, 0, 95, 0.3); }
+
+/* navigation */
+:root[data-theme='light'] nav { background: rgba(241, 248, 248, 0.82); }
+@media (max-width: 960px) {
+    :root[data-theme='light'] .links { background: rgba(241, 248, 248, 0.97); }
+    :root[data-theme='light'] .links a.on { background: rgba(0, 121, 107, 0.1); }
+}
+
+/* hero */
+:root[data-theme='light'] .pill { background: rgba(255, 255, 255, 0.85); box-shadow: 0 2px 12px rgba(0, 121, 107, 0.15); }
+:root[data-theme='light'] .pill:hover { box-shadow: 0 4px 18px rgba(0, 121, 107, 0.4); }
+:root[data-theme='light'] .badge { background: rgba(255, 255, 255, 0.92); box-shadow: 0 4px 16px rgba(0, 121, 107, 0.2); }
+:root[data-theme='light'] .photo {
+    background: #dcecec;
+    border-color: #fff;
+    box-shadow:
+            0 0 0 6px rgba(0, 121, 107, 0.15),
+            0 18px 60px rgba(0, 121, 107, 0.3),
+            0 0 100px rgba(196, 0, 95, 0.12);
+}
+
+/* certificates */
+:root[data-theme='light'] .thumb { background: #dcecec; }
+:root[data-theme='light'] .x { color: #00f5d4; border-color: rgba(0, 245, 212, 0.4); } /* sits on the dark modal */
+
+/* contact form */
+:root[data-theme='light'] input,
+:root[data-theme='light'] textarea { background: rgba(255, 255, 255, 0.85); }

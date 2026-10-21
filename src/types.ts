@@ -9,7 +9,7 @@ export interface Certificate {
     issuer: string
     category: string
     year: string
-    date?: string      // ← new, optional, e.g. 'May 28, 2026'
+    date?: string      // optional, e.g. 'May 28, 2026'
     c1: string
     c2: string
     image?: string
@@ -25,4 +25,12 @@ export interface Education {
     degree: string
     period: string
     details: string
+}
+
+/* Needed by ProjectCard.vue (delete this and that file if you don't use projects) */
+export interface Project {
+    title: string
+    blurb: string
+    tags: string[]
+    art: 'heatmap' | 'components' | 'code'
 }
