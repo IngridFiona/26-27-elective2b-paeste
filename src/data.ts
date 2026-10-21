@@ -9,7 +9,7 @@ export const phrases: string[] = [
     'Computer Engineering Student',
     'Always learning, always building',
     'Still figuring out why my code works',
-    'Pindot dito, code doon',
+    'Pindot dito, code doon hehe',
     'Sana hindi mag-error',
 ]
 
