@@ -25,7 +25,7 @@ onBeforeUnmount(() => removeEventListener('keydown', onKey))
 
 <template>
   <section id="certs">
-    <h2>Certificates</h2>
+    <h2>Achievements and Certificates</h2>
 
     <div class="filters">
       <button

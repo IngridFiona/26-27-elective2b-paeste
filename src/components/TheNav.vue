@@ -9,9 +9,10 @@ const current = ref('hero')
 const links = [
   { id: 'hero', label: 'Home', icon: 'M3 11l9-8 9 8v10a1 1 0 01-1 1h-5v-6H9v6H4a1 1 0 01-1-1z' },
   { id: 'about', label: 'About', icon: 'M3 5h18v14H3zM9 11a2 2 0 100-4 2 2 0 000 4zM5.5 16c.6-2.2 6.4-2.2 7 0M15 9h3M15 13h3' },
-  { id: 'education', label: 'Education', icon: 'M2 9l10-5 10 5-10 5zM6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5' },
+  { id: 'education', label: 'Background', icon: 'M2 9l10-5 10 5-10 5zM6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5' },
   { id: 'skills', label: 'Skills', icon: 'M8 7l-5 5 5 5M16 7l5 5-5 5' },
-  { id: 'certs', label: 'Certificates', icon: 'M12 14a6 6 0 100-12 6 6 0 000 12zM8.5 13L7 22l5-3 5 3-1.5-9' },
+  { id: 'projects', label: 'Projects', icon: 'M3 7h6l2 2h10v10H3z' },
+  { id: 'certs', label: 'Achievements', icon: 'M12 14a6 6 0 100-12 6 6 0 000 12zM8.5 13L7 22l5-3 5 3-1.5-9' },
   { id: 'contact', label: 'Contact', icon: 'M3 6h18v12H3zM3 7l9 7 9-7' },
 ]
 
@@ -87,7 +88,7 @@ nav {
 .links { display: flex; gap: 6px; height: 100%; margin-left: auto; }
 .links a {
   display: inline-flex; align-items: center; gap: 8px;
-  padding: 0 16px; height: 100%;
+  padding: 0 12px; height: 100%;
   font: 500 0.9rem var(--mono); color: var(--mute); text-decoration: none;
   border-bottom: 2px solid transparent; transition: color 0.2s, border-color 0.2s;
 }

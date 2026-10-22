@@ -85,7 +85,7 @@ onBeforeUnmount(() => clearTimeout(timer))
       </div>
 
       <div class="actions">
-        <a class="btn" href="/cv.jpg" download="My-CV.jpg">
+        <a class="btn" href="/cv.jpg" download="Paeste CV.pdf">
           <svg class="ico" viewBox="0 0 24 24" aria-hidden="true">
             <path d="M12 3v12m0 0l-4-4m4 4l4-4M4 20h16" />
           </svg>

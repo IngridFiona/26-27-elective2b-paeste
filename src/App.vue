@@ -8,6 +8,7 @@ import HeroSection from '@/components/HeroSection.vue'
 import AboutSection from '@/components/AboutSection.vue'
 import EducationSection from '@/components/EducationSection.vue'
 import SkillsSection from '@/components/SkillsSection.vue'
+import ProjectsSection from '@/components/ProjectsSection.vue'
 import CertificatesSection from '@/components/CertificatesSection.vue'
 import ContactForm from '@/components/ContactForm.vue'
 
@@ -28,6 +29,7 @@ const loading = ref(true)
       <AboutSection />
       <EducationSection />
       <SkillsSection />
+      <ProjectsSection />
       <CertificatesSection />
       <ContactForm />
     </main>

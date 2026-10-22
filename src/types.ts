@@ -27,10 +27,13 @@ export interface Education {
     details: string
 }
 
-/* Needed by ProjectCard.vue (delete this and that file if you don't use projects) */
+/* Used by ProjectCard.vue and ProjectsSection.vue */
 export interface Project {
-    title: string
-    blurb: string
-    tags: string[]
-    art: 'heatmap' | 'components' | 'code'
+    title: string                              // project name
+    schoolYear: string                         // e.g. '2024 – 2025'
+    subject: string                            // course subject, e.g. 'Data Structures'
+    semester?: string                          // optional, e.g. '1st Semester'
+    status?: 'in-progress' | 'completed'       // optional badge on the card
+    team?: string[]                            // optional teammates, e.g. ['Juan Dela Cruz', 'Maria Santos']
+    art?: 'heatmap' | 'components' | 'code' | 'circuit' | 'chip' | 'sensor' | 'helmet' | 'house'   // decorative banner picture
 }

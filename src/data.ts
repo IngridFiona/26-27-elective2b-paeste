@@ -1,4 +1,4 @@
-import type { Certificate, Education, Fact, Skill } from './types'
+import type { Certificate, Education, Fact, Project } from './types'
 
 export const profile = {
     name: 'Ingrid Fiona Paeste',
@@ -14,7 +14,7 @@ export const phrases: string[] = [
 ]
 
 export const techPills: string[] = [
-    'C++', 'C', 'Django', 'Java', 'Phyton',
+    'C++', 'C', 'Django', 'Java', 'Python',
     'HTML', 'CSS', 'nodejs', 'PostgreSQL', 'JavaScript', 'Arduino'
 ]
 
@@ -45,7 +45,7 @@ export const about = {
     paragraphs: [
         'I’m Ingrid Fiona Paeste, an computer engineering student at Cagayan State University who is endlessly curious and always building.\n' +
         '\n' +
-        'I love the process of figuring things out from scratch.'+
+        'I love the process of figuring things out from scratch.' +
         '\n' +
         'To me, being a student isn\'t about knowing everything yet; it\'s about having the passion to learn, experiment, and turn code and circuits into working reality. I\'m always eager to tackle new challenges, build cool tech, and grow a little bit more every single day.',
     ],
@@ -84,8 +84,7 @@ export const skillGroups = [
             'Programming Languages: C, C++, Java, and Python',
             'Knowledge of Microprocessors and Embedded Systems',
             'Basic Digital Logic Circuits and Electronics',
-
-],
+        ],
     },
     {
         title: 'Soft Skills',
@@ -93,6 +92,71 @@ export const skillGroups = [
             'Fast Learner', 'Teamwork and Collaboration', 'Problem Solving',
             'Time Management', 'Adaptability', 'Critical Thinking',
         ],
+    },
+]
+
+/* ===================== FEATURED PROJECTS =====================
+   Each project only needs: title, schoolYear, subject.
+   art = the decorative picture on the card:
+   'heatmap' | 'components' | 'code' | 'circuit' | 'chip' | 'sensor' | 'helmet' | 'house'
+
+   OPTIONAL: add a team line to any project that had teammates:
+       team: ['Teammate One', 'Teammate Two'],
+   Leave it out for solo projects and no "Team" row will show.
+================================================================ */
+export const projects: Project[] = [
+    {
+        title: 'Custom Regulated Power Supply',
+        schoolYear: '2024 – 2025',
+        semester: '1st Semester',
+        subject: 'Fundamentals of Electronics Circuit',
+        art: 'circuit',
+        status: 'completed',
+    },
+    {
+        title: 'Gas and Smoke Sensor',
+        schoolYear: '2024 – 2025',
+        semester: '2nd Semester',
+        subject: 'Logic Circuits And Design',
+        art: 'sensor',
+        status: 'completed',
+        team: ['Gerald Filbert Baggay', 'Xyrrelle Faith Cauilan', 'Jayhan Dayag', 'Raniel Mark Deza', 'John Medric Gumabay', 'Ingrid Fiona M. Paeste', 'Marc Reily Palattao', 'Juliana Francesca Peralta', 'Mitz Zyrelle Victorio'],
+
+    },
+    {
+        title: 'Custom PIC Development Board',
+        schoolYear: '2025 – 2026',
+        semester: '1st Semester',
+        subject: 'Computer Engineering Drafting and Design',
+        art: 'chip',
+        status: 'completed',
+    },
+    {
+        title: 'Libag Integrated School Information System',
+        schoolYear: '2025 – 2026',
+        semester: '1st Semester',
+        subject: 'Software Design',
+        art: 'components',
+        status: 'completed',
+        team: ['Gerald Filbert Baggay', 'John Rico Fragata', 'John Medric Gumabay', 'Ingrid Fiona M. Paeste', 'Juliana Francesca Peralta', 'Duane Harry Reupta', 'Yvan Dominic Tabaldo', 'Marc Henry Unciano'],
+    },
+    {
+        title: 'SMARTRISE: Intelligent Flood-Adaptive Housing System',
+        schoolYear: '2025 – 2026',
+        semester: '2nd Semester',
+        subject: 'Embedded Systems 1',
+        art: 'house',
+        status: 'completed',
+        team: ['John Rico Fragata', 'Xzander Yeil Imatong', 'Mariel Clarrize Domingo', 'Ivy Vanessa Los Baños', 'Ingrid Fiona Paeste', 'Marc Reily Palattao', 'Marc Henry Unciano']
+    },
+    {
+        title: 'YOLO11-Based Smart Helmet with Obstacle Detection and Warning System for Visually Impaired Individuals',
+        schoolYear: '2026 – 2027',
+        semester: '1st Semester',
+        subject: 'CpE Practice and Design 1',
+        art: 'helmet',
+        status: 'in-progress',
+        team: ['Jayhan B. Dayag', 'John Medric M. Gumabay', 'Ingrid Fiona M. Paeste', 'Mitz Zyrelle M. Victorio'],
     },
 ]
 
@@ -118,45 +182,44 @@ export const certificates: Certificate[] = [
         c2: '#4a0f5c',
         image: 'certday2.jpeg',  // ← your photo 2
     },
-    {                                     // ← new block
-        id: 3,                            // next number, must be unique
-        title: 'Regional ITE Summit 2026',       // title shown on the card
-        issuer: 'Building Smarter Futures through Technology and Engineering', // who gave it
-        category: 'Training',             // filter button name
+    {
+        id: 3,
+        title: 'Regional ITE Summit 2026',
+        issuer: 'Building Smarter Futures through Technology and Engineering',
+        category: 'Training',
         year: 'July 22, 2026',
-        c1: '#3a86ff',                    // c1 and c2 only matter if there is no photo
+        c1: '#3a86ff',
         c2: '#0a2a6e',
-        image: 'itesummit.jpeg',    // must match the file name exactly
+        image: 'itesummit.jpeg',
     },
-    {                                          // ← NEW: OJT
+    {
         id: 4,
-        title: 'On-the-Job Training (OJT)',    // change to the exact title
-        issuer: 'Magellan Solutions',                // the company where you did your OJT
-        category: 'OJT',                       // creates a new "OJT" filter button
-        year: 'June 04,2026',
+        title: 'On-the-Job Training (OJT)',
+        issuer: 'Magellan Solutions',
+        category: 'OJT',
+        year: 'June 04, 2026',
         c1: '#ff9f1c',
         c2: '#5a2a0a',
-        image: 'ojt.jpeg',                     // ← your OJT file name
+        image: 'ojt.jpeg',
     },
-    {                                          // ← NEW: BOSH SO1
+    {
         id: 5,
-        title: 'Basic Occupational Safety and Health Training\n',                     // or the full name of the training
-        issuer: 'Department of Labor and Employment, Occupational Safety and Health Center',                 // the training provider
-        category: 'Safety',                    // creates a new "Safety" filter button
+        title: 'Basic Occupational Safety and Health Training',
+        issuer: 'Department of Labor and Employment, Occupational Safety and Health Center',
+        category: 'Safety',
         year: 'May 28, 2026',
         c1: '#4cc9f0',
         c2: '#0f3460',
-        image: 'boshso1.jpeg',                 // ← your BOSH SO1 file name
+        image: 'boshso1.jpeg',
     },
-    {                                          // ← NEW: BOSH SO1
+    {
         id: 6,
-        title: 'Best Practices for Personal Data Protection:Safeguarding Your Digital Life\n',                     // or the full name of the training
-        issuer: 'Department of Science and Technology-Science Education Institute-Region 2',                 // the training provider
-        category: 'Seminar',                    // creates a new "Safety" filter button
+        title: 'Best Practices for Personal Data Protection: Safeguarding Your Digital Life',
+        issuer: 'Department of Science and Technology-Science Education Institute-Region 2',
+        category: 'Seminar',
         year: 'April 04, 2025',
         c1: '#4cc9f0',
         c2: '#0f3460',
-        image: 'dost.jpeg',                 // ← your BOSH SO1 file name
+        image: 'dost.jpeg',
     },
-
 ]
