@@ -112,6 +112,7 @@ export const projects: Project[] = [
         subject: 'Fundamentals of Electronics Circuit',
         art: 'circuit',
         status: 'completed',
+        team: ['Ingrid Fiona Paeste', 'Marc Reily Palattao', 'Cristyl Joy Sacatani'],
     },
     {
         title: 'Gas and Smoke Sensor',
@@ -130,6 +131,7 @@ export const projects: Project[] = [
         subject: 'Computer Engineering Drafting and Design',
         art: 'chip',
         status: 'completed',
+        team: ['Christian Gil German', 'Ingrid Fiona Paeste', 'Juliana Francesca Peralta', 'Mitz Zyrelle Victorio'],
     },
     {
         title: 'Libag Integrated School Information System',
