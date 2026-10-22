@@ -9,7 +9,7 @@ const { el, seen } = useInView(0.15)
 <template>
   <section id="projects">
     <h2>Featured Projects</h2>
-    <p class="lead">Projects I made for my courses.</p>
+    <p class="lead"></p>
 
     <div ref="el" class="grid">
       <!-- the fade-in sits on this wrapper so it never fights the card's tilt effect -->
